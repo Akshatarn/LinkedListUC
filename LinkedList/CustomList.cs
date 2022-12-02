@@ -13,7 +13,9 @@ namespace LinkedList
         {
             Node newNode = new Node(data);
             if (head == null)
+            {
                 head = newNode;
+            }                
             else
             {
                 Node temp = head;
@@ -30,6 +32,10 @@ namespace LinkedList
             newNode.next = head;
             head = newNode;
             Console.WriteLine($"{newNode.data} is added into the list.");
+        }
+        public void Append(int data)
+        {
+            AddLast(data); // UC3
         }
         public void Display()
         {

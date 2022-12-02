@@ -29,10 +29,17 @@ namespace LinkedList
                     break;
                 case 3:
                     CustomList customLinkedList1 = new CustomList();
-                    customLinkedList1.AddFirst(70);                                     //AddFirst() UC2
+                    customLinkedList1.AddFirst(70);                                     // UC2
                     customLinkedList1.AddFirst(30);
                     customLinkedList1.AddFirst(56);
                     customLinkedList1.Display();
+                    break;
+                case 4:
+                    CustomList customLinkedList2 = new CustomList();
+                    customLinkedList2.Append(56);                                     // UC3
+                    customLinkedList2.Append(30);
+                    customLinkedList2.Append(70);
+                    customLinkedList2.Display();
                     break;
                 default:
                     Console.WriteLine("Invalid option selected .Please try again !");
