@@ -117,6 +117,31 @@ namespace LinkedList
             if (!isFound)
                 Console.WriteLine($"{data} node is not present.");
         }
+        public void InsertAfter(int insertAfter, int data)       // UC8.
+        {
+            Node newNode = new Node(data);
+            bool isFound = false;
+            Node temp = head;
+            if (temp == null)
+                Console.WriteLine("Linked List is empty");
+            else
+            {
+                while (temp != null)
+                {
+                    if (temp.data == insertAfter)
+                    {
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        Console.WriteLine($"{newNode.data} insertion done after {temp.data}.");
+                        isFound = true;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+            }
+            if (!isFound)
+                Console.WriteLine($"{data} node is not present.");
+        }
         public void Display()
         {
             Console.Write("Displaying Nodes ");
