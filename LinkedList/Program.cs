@@ -13,7 +13,8 @@ namespace LinkedList
             Console.WriteLine("Welcome to LinkedList UCs");
             Console.WriteLine("Please choose as per the given options -\n" +
                 "1: Adding elements by BuiltIn-LinkedList\n" +
-                "2: Adding elements by using Custom LinkedList\n");
+                "2: Adding elements by using Custom LinkedList\n"+
+                "6: Deleting First Element from the LL.");
             int options = Convert.ToInt32(Console.ReadLine());
             switch (options)
             {

@@ -62,6 +62,12 @@ namespace LinkedList
             if (!isFound)
                 Console.WriteLine($"{data} node is not present.");
         }
+        public void RemoveFirst()      
+        {
+            int deletedNode = head.data;
+            head = head.next;
+            Console.WriteLine($"First node {deletedNode} has been removed.");
+        }
         public void Display()
         {
             Console.Write("Displaying Nodes ");
