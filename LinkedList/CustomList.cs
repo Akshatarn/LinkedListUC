@@ -37,6 +37,31 @@ namespace LinkedList
         {
             AddLast(data); // UC3
         }
+        public void InsertInBetween(int insertAfter, int data, int insertBefore)       //InsertBetweenNodes() UC4.
+        {
+            Node newNode = new Node(data);
+            bool isFound = false;
+            Node temp = head;
+            if (temp == null)
+                Console.WriteLine("Linked List is empty");
+            else
+            {
+                while (temp != null)
+                {
+                    if (temp.data == insertAfter && temp.next.data == insertBefore)
+                    {
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        Console.WriteLine($"{newNode.data} insertion done between {temp.data} and {newNode.next.data}.");
+                        isFound = true;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+            }
+            if (!isFound)
+                Console.WriteLine($"{data} node is not present.");
+        }
         public void Display()
         {
             Console.Write("Displaying Nodes ");

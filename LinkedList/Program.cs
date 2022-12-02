@@ -41,6 +41,13 @@ namespace LinkedList
                     customLinkedList2.Append(70);
                     customLinkedList2.Display();
                     break;
+                case 5:
+                    CustomList customLinkedList3 = new CustomList();
+                    customLinkedList3.AddFirst(56);
+                    customLinkedList3.AddLast(70);
+                    customLinkedList3.InsertInBetween(56, 30, 70);                   // UC4.
+                    customLinkedList3.Display();
+                    break;
                 default:
                     Console.WriteLine("Invalid option selected .Please try again !");
                     break;
