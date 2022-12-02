@@ -73,6 +73,33 @@ namespace LinkedList
                 Console.WriteLine($"{deletedNode} is removed from Linkedlist");
             }
         }
+        public void DeleteFromMiddle(int data)
+        {
+            Node temp = head;
+            if (temp == null)
+            {
+                Console.WriteLine("List is empty, deletion cant be done.");
+            }
+            else if (temp.next == null)
+            {
+                Console.WriteLine($"{temp.data} has been deleted");
+                head = null;
+            }
+            else
+            {
+                while (temp.next != null)
+                {
+                    if (temp.next.data == data)
+                    {
+                        Console.WriteLine($"{temp.next.data} has been deleted.");
+                        temp.next = temp.next.next;
+                        //temp.next.next = null;
+                    }
+                    temp = temp.next;
+                }
+
+            }
+        }
         public void RemoveLast()        // UC6
         {
             Node temp = head;
@@ -141,6 +168,25 @@ namespace LinkedList
             }
             if (!isFound)
                 Console.WriteLine($"{data} node is not present.");
+        }
+        public int Size()       
+        {
+            Node temp = head;
+            int elementCount = 0;
+            if (temp == null)
+            {
+                Console.WriteLine("List is empty ,Hence size is 0.");
+                return 0;
+            }
+            else
+            {
+                while (temp != null)
+                {
+                    elementCount++;
+                    temp = temp.next;
+                }
+                return elementCount;
+            }
         }
         public void Display()
         {
