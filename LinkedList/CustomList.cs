@@ -62,11 +62,38 @@ namespace LinkedList
             if (!isFound)
                 Console.WriteLine($"{data} node is not present.");
         }
-        public void RemoveFirst()      
+        public void RemoveFirst()      // UC5 
         {
-            int deletedNode = head.data;
-            head = head.next;
-            Console.WriteLine($"First node {deletedNode} has been removed.");
+            if (head == null)
+                Console.WriteLine("LinkedList is emty");
+            else
+            {
+                int deletedNode = head.data;
+                head = head.next;
+                Console.WriteLine($"{deletedNode} is removed from Linkedlist");
+            }
+        }
+        public void RemoveLast()        // UC6
+        {
+            Node temp = head;
+            if (head == null)
+                Console.WriteLine("LinkedList is emty");
+            else if (temp.next == null)
+            {
+                int data = temp.data;
+                head = null;
+                Console.WriteLine($"{data} is deleted");
+            }
+            else
+            {
+                while (temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+                int lastDeletedNode = temp.next.data;
+                temp.next = null;
+                Console.WriteLine($"{lastDeletedNode} node is deleted");
+            }
         }
         public void Display()
         {
